@@ -1,0 +1,15 @@
+AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
+$ git config --global user.name sofia vergara
+
+AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
+$ git config --global user.email adriansutil2004@gmail.com
+
+AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
+$ git config --global color.ui auto
+warning: color.ui has multiple values
+error: cannot overwrite multiple values with a single value
+       Use a regexp, --add or --replace-all to change color.ui.
+
+AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
+$ git init libro
+Initialized empty Git repository in C:/Users/AlumnoLinkiaFP/libro/.git/
