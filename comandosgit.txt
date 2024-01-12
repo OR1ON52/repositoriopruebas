@@ -1,15 +1,203 @@
-AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
-$ git config --global user.name sofia vergara
+C:\Users\AlumnoLinkiaFP\libro>echo. Capitulo 1: Introduccion a Git > indice.txt
 
-AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
-$ git config --global user.email adriansutil2004@gmail.com
+C:\Users\AlumnoLinkiaFP\libro>echo. Capitulo 2: Flujo de trabajo basico > indice.txt
 
-AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
-$ git config --global color.ui auto
-warning: color.ui has multiple values
-error: cannot overwrite multiple values with a single value
-       Use a regexp, --add or --replace-all to change color.ui.
+C:\Users\AlumnoLinkiaFP\libro>echo. Capitulo 3:Gestion de ramas > indice.txt
 
-AlumnoLinkiaFP@DESKTOP-N3153V3 MINGW64 ~
-$ git init libro
-Initialized empty Git repository in C:/Users/AlumnoLinkiaFP/libro/.git/
+C:\Users\AlumnoLinkiaFP\libro>echo. Capitulo 4: Repositorios remotos > indice.txt
+
+C:\Users\AlumnoLinkiaFP\libro>git status
+
+C:\Users\AlumnoLinkiaFP\libro>git add indice.txt
+
+C:\Users\AlumnoLinkiaFP\libro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   indice.txt
+
+
+C:\Users\AlumnoLinkiaFP\libro>git commit -m "Añadido capitulo 3 sobre gestion de ramas"
+[master a62f4d5] Añadido capitulo 3 sobre gestion de ramas
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\AlumnoLinkiaFP\libro>git show
+commit a62f4d5891151688db18dfd2cfed3d96e936f266 (HEAD -> master)
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:03:54 2024 +0100
+
+    Añadido capitulo 3 sobre gestion de ramas
+
+diff --git a/indice.txt b/indice.txt
+index 8d1c8b6..ada6d7c 100644
+--- a/indice.txt
++++ b/indice.txt
+@@ -1 +1 @@
+-
++ Capitulo 4: Repositorios remotos
+
+
+
+
+C:\Users\AlumnoLinkiaFP\libro>git clone https://github.com/asalber/libro-git.git
+Cloning into 'libro-git'...
+remote: Enumerating objects: 42, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 42 (delta 2), reused 2 (delta 2), pack-reused 36
+Receiving objects: 100% (42/42), 4.55 KiB | 2.27 MiB/s, done.
+Resolving deltas: 100% (8/8), done.
+
+C:\Users\AlumnoLinkiaFP\libro>cd libro-git
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git reset --hard 8c808
+HEAD is now at 8c80810 Añadido capítulo 3 sobre gestión de ramas al índice.
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git remote remove origin
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git log
+commit 8c808102b96843781205b3169444a002878f5b21 (HEAD -> master)
+Author: Alfredo Sánchez Alberca <asalber@gmail.com>
+Date:   Wed Feb 13 18:05:27 2019 +0100
+
+    Añadido capítulo 3 sobre gestión de ramas al índice.
+
+commit bd7f788903cf1b1adbde028d474068cebb6ac870
+Author: Alfredo Sánchez Alberca <asalber@gmail.com>
+Date:   Wed Feb 13 17:58:58 2019 +0100
+
+    Añadido índice del libro.
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>mkdir capitulos
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>echo. > capitulos/capitulo1.txt
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>echo. > capitulos/capitulo1.txt Git es un sistema de control de versiones ideado por Linus Torvalds.^D
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git add .
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git commit -m "Añadido capitulo 1."
+[master 8adfe07] Añadido capitulo 1.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 capitulos/capitulo1.txt
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git log
+commit 8adfe079851e6e12578d5c2b66effb9a5be6a09e (HEAD -> master)
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:18:08 2024 +0100
+
+    Añadido capitulo 1.
+
+commit 8c808102b96843781205b3169444a002878f5b21
+Author: Alfredo Sánchez Alberca <asalber@gmail.com>
+Date:   Wed Feb 13 18:05:27 2019 +0100
+
+    Añadido capítulo 3 sobre gestión de ramas al índice.
+
+commit bd7f788903cf1b1adbde028d474068cebb6ac870
+Author: Alfredo Sánchez Alberca <asalber@gmail.com>
+Date:   Wed Feb 13 17:58:58 2019 +0100
+
+    Añadido índice del libro.
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git> echo. > capitulos/capitulo2.txt El flujo de trabajo basico con Git consiste en: 1- Hacer cambios en el repositorio 2- Añadir los cambios a la zona de intercambio temporal 3- Hacer un commit de los cambios^D
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git add .
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git commit -m "Añadido capitulo 2."
+[master f9acdd1] Añadido capitulo 2.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 capitulos/capitulo2.txt
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git diff HEAD~2..HEAD
+diff --git a/capitulos/capitulo1.txt b/capitulos/capitulo1.txt
+new file mode 100644
+index 0000000..20f4baa
+--- /dev/null
++++ b/capitulos/capitulo1.txt
+@@ -0,0 +1 @@
++  Git es un sistema de control de versiones ideado por Linus Torvalds.^D^M
+diff --git a/capitulos/capitulo2.txt b/capitulos/capitulo2.txt
+new file mode 100644
+index 0000000..376c6fb
+--- /dev/null
++++ b/capitulos/capitulo2.txt
+@@ -0,0 +1 @@
++  El flujo de trabajo basico con Git consiste en: 1- Hacer cambios en el repositorio 2- A<A4>adir los cambios a la zona de intercambio temporal 3- Hacer un commit de los cambios^D
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>echo "Capitulo 5: Conceptos avanzados" >> indice.txt
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git add indice.txt
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git commit -m "Añadido capitulo 5 al indice"
+[master 30989c2] Añadido capitulo 5 al indice
+ 1 file changed, 1 insertion(+)
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git annotate indice.txt
+bd7f7889        (Alfredo Sánchez Alberca        2019-02-13 17:58:58 +0100       1)Capítulo 1: Introducción a Git
+bd7f7889        (Alfredo Sánchez Alberca        2019-02-13 17:58:58 +0100       2)Capítulo 2: Flujo de trabajo básico
+8c808102        (Alfredo Sánchez Alberca        2019-02-13 18:05:27 +0100       3)Capítulo 3: Gestión de ramas
+8c808102        (Alfredo Sánchez Alberca        2019-02-13 18:05:27 +0100       4)Capítulo 4: Repositorios remotos
+30989c29        (     sofia     2024-01-12 10:33:00 +0100       5)"Capitulo 5: Conceptos avanzados"
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git branch bibliografia
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git branch -av
+  bibliografia 30989c2 Añadido capitulo 5 al indice
+* master       30989c2 Añadido capitulo 5 al indice
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>echo. > capitulos/capitulo4.txt bananin ^D
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git add capitulos.txt
+fatal: pathspec 'capitulos.txt' did not match any files
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git add .
+warning: in the working copy of 'git', LF will be replaced by CRLF the next time Git touches it
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git commit -m "Añadido capitulo 4."
+[master 1933a94] Añadido capitulo 4.
+ 3 files changed, 30 insertions(+)
+ create mode 100644 ..HEAD
+ create mode 100644 capitulos/capitulo4.txt
+ create mode 100644 git
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git log
+commit 1933a94a3afcc364dc7251bd24a2786300fe0a39 (HEAD -> master)
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:45:22 2024 +0100
+
+    Añadido capitulo 4.
+
+commit 30989c29fccc7ee7e034ce6af892f03f3dade3d1 (bibliografia)
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:33:00 2024 +0100
+
+    Añadido capitulo 5 al indice
+
+commit 9ec8ca697266a283d46b9d643170f3fe778c80da
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:27:37 2024 +0100
+
+    Añadido capitulo 3.
+
+commit f9acdd1addc71d435cd827b83acc82ad191743c4
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:21:08 2024 +0100
+
+    Añadido capitulo 2.
+
+commit 8adfe079851e6e12578d5c2b66effb9a5be6a09e
+Author: sofia <adriansutil2004@gmail.com>
+Date:   Fri Jan 12 10:18:08 2024 +0100
+
+    Añadido capitulo 1.
+
+C:\Users\AlumnoLinkiaFP\libro\libro-git>git merge master bibliografia
+Merge made by the 'ort' strategy.
+ ..HEAD                  |  0
+ capitulos/capitulo4.txt |  1 +
+ git                     | 29 +++++++++++++++++++++++++++++
+ 3 files changed, 30 insertions(+)
+ create mode 100644 ..HEAD
+ create mode 100644 capitulos/capitulo4.txt
+ create mode 100644 git
